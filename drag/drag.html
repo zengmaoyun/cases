@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-	<meta charset='utf-8'>
+	<meta charset="UTF-8">
 	<title>拖拽实现拼图</title>
 </head>
 <style type="text/css">
@@ -65,9 +65,15 @@
 		random = getRandomNum(9);
 		/*图片元素*/
 		var img = [
-				'image/1_01.jpg','image/1_02.jpg','image/1_03.jpg',
-				'image/1_04.jpg','image/1_05.jpg','image/1_06.jpg',
-				'image/1_07.jpg','image/1_08.jpg','image/1_09.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163743pu225q9u4ycw2v29.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163743cxkudd4e0vxiui9k.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163743o3cbt2z2d1tivyrr.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163743p30ccq0w1uq7tnth.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163742esh3300ntmjhbmhw.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163742jge90h9scn2z68fn.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163742xwdy9h9wxwwyy5os.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163742phmxmwzwx5sulhow.jpg.thumb.jpg',
+				'http://www.w3cfuns.com/data/attachment/album/201507/09/163741rp4g5l9k9lh7cpc9.jpg.thumb.jpg'									
 			]
 
 		/* 用于拼图的dest table*/
@@ -113,7 +119,7 @@
 		event.dataTransfer.setData('img',info);/**abd只是一个标记，源和目标同时一样就好**/	
 	}
 	/*
-	*	stoptDefault 放置拼图表格的ondragover的事件
+	*	stopDefault放置拼图表格的ondragover的事件
 	*/
 	function stopDefault(event){
 		var event = event||window.event;
@@ -125,7 +131,6 @@
 			event.stopPropagation();
 		else
 			event.cancelBubble=true;
-		return false;
 	}
 	/*
 	*	 放置拼图表格的drop的事件
@@ -151,7 +156,6 @@
 			}
 		}
 		fromDest = false;
-		return false;
 	}
 
 	/*
@@ -175,7 +179,7 @@
 	}
 
 	/*
-	*	changeUrl 目的位置以存在图片时替换src
+	*	changeUrl目的位置替换src
 	*/
 	function changeUrl(target,url){
 		target.src = url;
