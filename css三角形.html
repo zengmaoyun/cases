@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3实现三角形</title>
+  <meta charset="utf-8">
+</head>
+<style type="text/css">
+/*原理演示*/
+#demo1{
+  float:left;
+  margin:0 40px 20px 100px;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: relative;
+  border: 2px solid #333;
+}
+
+#demo1:after, #demo1:before {
+     content:'';
+     border:solid transparent;
+     position: absolute;
+     width:0;
+     height:0;
+     left:100%;
+}
+
+ /*原理，用after（白色）遮住before的黑色三角形*/
+#demo1:after {
+   border-width:10px;
+   border-left-color:pink;
+   top:20px;
+}
+ 
+#demo1:before {
+   border-width:12px;
+   border-left-color:#000;
+   top:40px;
+}
+
+
+/*实际的效果*/
+#demo {
+    float:left;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #333;
+}
+#demo:after, #demo:before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    left: 100%;
+    position: absolute;
+    width: 0;
+}
+
+ /*原理，用after（白色）遮住before的黑色三角形*/
+#demo:after {
+  border-width:10px;
+  border-left-color:#fff;
+  top: 20px;
+}
+ 
+#demo:before {
+    border-width: 12px;
+    border-left-color: #000;
+    top: 18px;
+}
+
+.h4_2{
+  float: left;
+  text-indent: 50px;
+}
+.h4_3{
+  float: left;
+  text-indent: 200px;
+}
+/*三角形*/
+.demo3 {
+   float:left;
+   width:0;
+   height: 0;
+   border-width: 100px;
+   border-style:solid;
+   border-color:red blue pink green;
+   margin:0 100px 0 40px;
+}
+
+.demo3_1,.demo3_2,.demo3_3,.demo3_4{
+  float: left;
+  margin: 0 20px 10px 0;
+  width:0;
+  height:0;
+  border:100px solid transparent;
+}
+.demo3_1{
+  border-top-color:red;
+  }
+.demo3_2{
+  border-left-color:green;
+}
+.demo3_3{
+  border-right-color:blue;
+}
+.demo3_4{
+  border-bottom-color:pink;
+}
+
+
+/*三角扇形*/
+.demo4 {
+  /*加一个圆角可以变成圆形和扇形*/
+   border-radius:100px;
+   float:left;
+   width:0;
+   height: 0;
+   border-width: 100px;
+   border-style:solid;
+   border-color:red blue pink green;
+   margin:0 100px 0 40px;
+}
+
+.demo4_1,.demo4_2,.demo4_3,.demo4_4{
+  border-radius:100px;
+  float: left;
+  margin: 0 20px 10px 0;
+  width:0;
+  height:0;
+  border:100px solid transparent;
+}
+.demo4_1{
+  border-top-color:red;
+  }
+.demo4_2{
+  border-left-color:green;
+}
+.demo4_3{
+  border-right-color:blue;
+}
+.demo4_4{
+  border-bottom-color:pink;
+}
+</style>
+<body>
+<h4>id:demo,使用demo:after和demo:before，让粉色（after）变为白色和黑色（before）在位置上重合实现右图</h4>
+<div id="demo1"></div>
+<div id="demo"></div>
+<div style="clear:both;"></div>
+<br/>
+<h4 class="h4_2">border原型，加上border-radius:100px;可以变成圆形和扇形</h4>
+<h4 class="h4_3">border原理实现的三角形</h4>
+<div style="clear:both;"></div>
+<div class="demo3"></div>
+
+<div class="demo3_1"></div>
+<div class="demo3_2"></div>
+<div class="demo3_3"></div>
+<div class="demo3_4"></div>
+
+<h4 class="h4_2">加上border-radius:100px变圆形</h4>
+<h4 class="h4_3">加上border-radius:100px变圆形扇形</h4>
+<div style="clear:both;"></div>
+<div class="demo4"></div>
+
+<div class="demo4_1"></div>
+<div class="demo4_2"></div>
+<div class="demo4_3"></div>
+<div class="demo4_4"></div>
+
+</body>
+</html>
